@@ -79,7 +79,7 @@
         rowClass: ''
       },
       {
-        name: '3. Trial Start (7-Day Free Trial) ★',
+        name: '3. Trial Start (7-Day Free Trial) (Anchor)',
         stepCvr: (bankLinkToTrial * 100).toFixed(1) + '%',
         cumCvr: (cumTrial * 100).toFixed(1) + '%',
         cpa: cpaTrial,
@@ -138,23 +138,26 @@
     const purchaseEventsPerAdSet = weeklyScaleBudgetPerAdSet / cpaPaid;
 
     simInsightBox.innerHTML = `
-      <strong>Live Signal-Volume Readout:</strong> At <strong>${fmtCurrency(budget, 0)}/mo</strong> (${fmtCurrency(weeklyScaleBudgetPerAdSet, 0)}/wk per Scaling Ad Set across ${scaleAdsets} Scaling Ad Sets), optimizing for <code>Trial Start (${fmtCurrency(cpaTrial)} CPT)</code> yields <strong>${trialEventsPerAdSet.toFixed(1)} events/week per Scaling Ad Set</strong> (${trialEventsPerAdSet >= 50 ? 'comfortably above' : 'below'} Meta’s 50/week Learning Phase threshold) while firing on Day 0. By contrast, optimizing directly for <code>Purchase (${fmtCurrency(cpaPaid)} CAC)</code> yields only <strong>${purchaseEventsPerAdSet.toFixed(1)} events/week per Ad Set</strong> and suffers a 7-day trial attribution blackout during Week 1. Projected 30-day acquisitions: <strong>${fmtInt(budget / cpaPaid)} Paid Annual Subscribers</strong>.
+      <strong>Live Signal-Volume Readout:</strong> At <strong>${fmtCurrency(budget, 0)}/mo</strong> (${fmtCurrency(weeklyScaleBudgetPerAdSet, 0)}/wk per Scaling Ad Set across ${scaleAdsets} Scaling Ad Sets), optimizing for <code>Trial Start (${fmtCurrency(cpaTrial)} CPT)</code> yields <strong>${trialEventsPerAdSet.toFixed(1)} events/week per Scaling Ad Set</strong> (${trialEventsPerAdSet >= 50 ? 'above' : 'below'} Meta's 50/week Learning Phase threshold) while firing on Day 0. Optimizing directly for <code>Purchase (${fmtCurrency(cpaPaid)} CAC)</code> yields only <strong>${purchaseEventsPerAdSet.toFixed(1)} events/week per Ad Set</strong> and misses Week 1 conversions due to the 7-day trial lag. Projected 30-day acquisitions: <strong>${fmtInt(budget / cpaPaid)} Paid Annual Subscribers</strong>.
     `;
   }
 
-  [inpBudget, inpCac, inpSuTrial, inpTrialPaid, inpScaleSplit, inpScaleAdsets].forEach((el) =>
-    el.addEventListener('input', updateSimulator)
-  );
+  if (inpBudget && simTableBody) {
+    [inpBudget, inpCac, inpSuTrial, inpTrialPaid, inpScaleSplit, inpScaleAdsets].forEach((el) =>
+      el.addEventListener('input', updateSimulator)
+    );
 
-  btnReset.addEventListener('click', () => {
-    inpBudget.value = 100000;
-    inpCac.value = 120;
-    inpSuTrial.value = 30;
-    inpTrialPaid.value = 40;
-    inpScaleSplit.value = 70;
-    inpScaleAdsets.value = 3;
+    btnReset.addEventListener('click', () => {
+      inpBudget.value = 100000;
+      inpCac.value = 120;
+      inpSuTrial.value = 30;
+      inpTrialPaid.value = 40;
+      inpScaleSplit.value = 85;
+      inpScaleAdsets.value = 3;
+      updateSimulator();
+    });
     updateSimulator();
-  });
+  }
 
   // Early-Warning Cohort CAC Checker (Question 3)
   const inpEarlyCpt = document.getElementById('inp-early-cpt');
@@ -167,49 +170,171 @@
 
   function updateEarlyChecker() {
     const cpt = Number(inpEarlyCpt.value);
-    const depositRate = Number(inpEarlyDeposit.value) / 100;
-    const survive24h = Number(inpEarlySurvive.value) / 100;
+    const rollingCvr = Number(inpEarlyDeposit.value) / 100;
+    const trialChurn = Number(inpEarlySurvive.value) / 100;
 
     valEarlyCpt.textContent = fmtCurrency(cpt, 2);
-    valEarlyDeposit.textContent = Math.round(depositRate * 100) + '%';
-    valEarlySurvive.textContent = Math.round(survive24h * 100) + '%';
+    valEarlyDeposit.textContent = Math.round(rollingCvr * 100) + '%';
+    valEarlySurvive.textContent = Math.round(trialChurn * 100) + '%';
 
-    // Predictive model calibrated so baseline (65% deposit, 82% 24h survival) = 40.0% Trial->Paid CVR
-    const survivalMultiplier = survive24h / 0.82;
-    const unfundedAliveShare = Math.max(0, survive24h - depositRate);
-    const rawPredictedTrialToPaid = (depositRate * 0.562 + unfundedAliveShare * 0.204) * survivalMultiplier;
-    const predictedTrialToPaid = Math.min(0.75, Math.max(0.1, rawPredictedTrialToPaid));
+    // Forecast model: 90D rolling Trial-to-Paid CVR adjusted by early trial churn (18% baseline)
+    const churnFactor = (1 - trialChurn) / 0.82;
+    const predictedTrialToPaid = Math.min(0.75, Math.max(0.1, rollingCvr * churnFactor));
     const predictedCac = cpt / predictedTrialToPaid;
 
     let badge = '';
     let actionText = '';
+    let meterColor = '#047857';
     if (predictedCac <= 120) {
-      badge = `<span class="status-ok">ON TRACK FOR &le;$120 CAC</span>`;
-      actionText = `Day-0/1 cohort quality is strong. Greenlight +15–20% budget scale on winning Post IDs.`;
+      badge = `<span class="status-ok">ON TRACK (&lt;= $120)</span>`;
+      actionText = `Greenlight +20% / 72h BAU scale on winning concepts.`;
+      meterColor = '#047857';
     } else if (predictedCac <= 135) {
-      badge = `<span class="status-warn">WATCHLIST ($121–$135 pCAC)</span>`;
-      actionText = `Hold budgets steady; audit Plaid linkage friction and rotate fresh hooks into fatigued ad sets.`;
+      badge = `<span class="status-warn">WATCHLIST ($121-$135)</span>`;
+      actionText = `Hold budgets steady. Audit trial churn and rotate fresh hooks.`;
+      meterColor = '#b45309';
     } else {
-      badge = `<span class="status-bad">OFF TRACK (&gt;$135 pCAC — INTERVENE)</span>`;
-      actionText = `Pause high-CPT or "Ghost Trial" ads (low Day-0 deposit rate) immediately—do not wait 7 days!`;
+      badge = `<span class="status-bad">INTERVENE (&gt; $135)</span>`;
+      actionText = `Pause high-CPT or high-churn creatives immediately.`;
+      meterColor = '#be123c';
     }
 
+    // Meter scales from $0 to $180; $120 target sits at 66.7%
+    const meterPct = Math.min(100, Math.max(8, (predictedCac / 180) * 100));
+    const projectedSubsPer1k = 1000 / predictedCac;
+
     earlyCacResult.innerHTML = `
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-        <span>Predicted Trial &rarr; Paid CVR: <strong>${(predictedTrialToPaid * 100).toFixed(1)}%</strong></span>
+      <div class="forecast-hero-top">
+        <div>
+          <div class="forecast-kicker">Projected Same-Day CAC</div>
+          <div class="forecast-big-cac">${fmtCurrency(predictedCac, 2)}</div>
+        </div>
         ${badge}
       </div>
-      <div style="font-size:22px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#fff;margin-bottom:6px;">
-        Predicted Day-8 Paid CAC: ${fmtCurrency(predictedCac, 2)}
+      <div class="forecast-meter">
+        <div class="forecast-meter-track">
+          <div class="forecast-meter-fill" style="width:${meterPct.toFixed(1)}%;background:${meterColor};"></div>
+          <div class="forecast-meter-target" style="left:66.7%;" title="$120 Target CAC"></div>
+        </div>
+        <div class="forecast-meter-labels">
+          <span>$0</span>
+          <span>Target: $120</span>
+          <span>$180+</span>
+        </div>
       </div>
-      <div style="font-size:13px;color:#cbd5e1;"><strong>Recommended Action:</strong> ${actionText}</div>
+      <div class="forecast-sub-row">
+        <span>Adj. CVR: <strong>${(predictedTrialToPaid * 100).toFixed(1)}%</strong></span>
+        <span>Subs / $1k Spend: <strong>${projectedSubsPer1k.toFixed(1)}</strong></span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text-secondary);margin-top:8px;">
+        <strong>Next Step:</strong> ${actionText}
+      </div>
     `;
   }
 
+  const presetButtons = Array.from(document.querySelectorAll('.preset-btn[data-preset]'));
+  const presets = {
+    strong: { cpt: 38, cvr: 44, churn: 14 },
+    baseline: { cpt: 48, cvr: 40, churn: 18 },
+    churn: { cpt: 52, cvr: 36, churn: 28 }
+  };
+
+  presetButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const p = presets[btn.dataset.preset];
+      if (!p) return;
+      inpEarlyCpt.value = p.cpt;
+      inpEarlyDeposit.value = p.cvr;
+      inpEarlySurvive.value = p.churn;
+      presetButtons.forEach((b) => b.classList.toggle('active', b === btn));
+      updateEarlyChecker();
+    });
+  });
+
   [inpEarlyCpt, inpEarlyDeposit, inpEarlySurvive].forEach((el) =>
-    el.addEventListener('input', updateEarlyChecker)
+    el.addEventListener('input', () => {
+      presetButtons.forEach((b) => b.classList.remove('active'));
+      updateEarlyChecker();
+    })
   );
 
-  updateSimulator();
   updateEarlyChecker();
+
+  // Deck Slide Navigation
+  const slides = Array.from(document.querySelectorAll('.deck-slide'));
+  const navLinks = Array.from(document.querySelectorAll('.nav-links a[data-slide]'));
+  const btnPrev = document.getElementById('btn-prev-slide');
+  const btnNext = document.getElementById('btn-next-slide');
+  const slideLabel = document.getElementById('deck-slide-label');
+
+  const slideNames = [
+    'A. Executive Summary',
+    'B. Account Structure & Optimization Events',
+    'C. Creative Testing & Scaling System',
+    'D. Measurement',
+    'E. AI in Your Workflow'
+  ];
+
+  let currentSlide = 0;
+
+  function showSlide(index, scrollTop = true) {
+    if (index < 0 || index >= slides.length) return;
+    currentSlide = index;
+
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === currentSlide);
+    });
+
+    navLinks.forEach((link) => {
+      const target = Number(link.dataset.slide);
+      link.classList.toggle('active', target === currentSlide);
+    });
+
+    if (slideLabel) {
+      slideLabel.innerHTML = `Slide <strong>${currentSlide + 1} / ${slides.length}</strong> | ${slideNames[currentSlide]}`;
+    }
+
+    if (btnPrev) btnPrev.disabled = currentSlide === 0;
+    if (btnNext) btnNext.disabled = currentSlide === slides.length - 1;
+
+    if (scrollTop) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showSlide(Number(link.dataset.slide));
+    });
+  });
+
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => showSlide(currentSlide - 1));
+  }
+
+  if (btnNext) {
+    btnNext.addEventListener('click', () => showSlide(currentSlide + 1));
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
+    if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+  });
+
+  // Allow deep-linking via URL hash
+  const hashMap = {
+    '#executive-summary': 0,
+    '#simulator': 0,
+    '#account-structure': 1,
+    '#creative-system': 2,
+    '#measurement': 3,
+    '#ai-workflow': 4
+  };
+  if (window.location.hash && hashMap[window.location.hash] !== undefined) {
+    showSlide(hashMap[window.location.hash], false);
+  } else {
+    showSlide(0, false);
+  }
 })();

@@ -3,376 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alinea Invest — UA Manager Take-Home System | Jorge E. Gutiérrez</title>
+  <title>Alinea Assessment | Jorge Gutierrez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=3" />
 </head>
 <body>
-  <!-- Sticky Executive Header -->
+  <!-- Sticky Deck Header -->
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
         <div class="brand-logo">A</div>
         <div>
-          <div class="brand-title">Alinea Invest <span class="badge-pill">UA Take-Home System</span></div>
-          <div class="brand-sub">Prepared by Jorge E. Gutiérrez Hernández · Senior UA & Performance Marketing</div>
+          <div class="brand-title">Alinea Assessment</div>
+          <div class="brand-sub">by Jorge Gutierrez</div>
         </div>
       </div>
-      <nav class="nav-links">
-        <a href="#simulator">Interactive Model</a>
-        <a href="#q1-structure">1. Account & Signals</a>
-        <a href="#q2-creative">2. Creative System</a>
-        <a href="#q3-measurement">3. Measurement</a>
-        <a href="#q4-ai">4. AI Workflow</a>
+      <nav class="nav-links" aria-label="Deck Sections">
+        <a href="#executive-summary" data-slide="0" class="active">A. Executive Summary</a>
+        <a href="#account-structure" data-slide="1">B. Account &amp; Events</a>
+        <a href="#creative-system" data-slide="2">C. Creative System</a>
+        <a href="#measurement" data-slide="3">D. Measurement</a>
+        <a href="#ai-workflow" data-slide="4">E. AI in Your Workflow</a>
       </nav>
-      <div class="topbar-actions">
-        <a
-          href="https://docs.google.com/spreadsheets/d/1VdTnJMs2p4NLGI6j1Mb_CovsykTevPdEmVDoL3xnqY4/edit"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary"
-        >
-          <span>Open Live Google Sheet</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-        </a>
-      </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">ZERO-TO-ONE META UA OPERATING SYSTEM · REGULATED FINTECH (SEC RIA)</div>
-          <h1>Scaling Alinea from Cold Pixel to <span class="gradient-text">833+ Paid Annual Subs/Mo</span> at &le;$120 CAC</h1>
+    <!-- SLIDE 1: A. EXECUTIVE SUMMARY -->
+    <div class="deck-slide active" data-slide="0">
+      <section id="executive-summary" class="hero">
+        <div class="hero-single">
+          <div class="eyebrow">A. EXECUTIVE SUMMARY | ALINEA META UA OPERATING SYSTEM</div>
+          <h1>A Result-Based Meta UA System to Scale Alinea at <span class="gradient-text">&lt;= $120 CAC</span></h1>
           <p class="hero-lead">
-            A complete operating system—not a list of tactics—designed to launch Alinea’s new Meta ad account on a <strong>$100,000 30-day budget</strong>, test <strong>50 new ads/week</strong> systematically, solve the <strong>7-day free trial vs. 7-day click attribution cliff</strong>, and govern AI with human-in-the-loop guardrails.
+            Instead of forcing $100,000 into a cold pixel on Day 1, this system starts lean, protects capital with automated stop-losses, and scales spend +20% every 72 hours only when Cohort CPST and 90D Forecast CAC hold within target.
           </p>
           <div class="hero-cta-row">
             <a href="https://docs.google.com/spreadsheets/d/1VdTnJMs2p4NLGI6j1Mb_CovsykTevPdEmVDoL3xnqY4/edit" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-              View Full Google Sheets Financial & Signal Model
+              Open Executive Google Sheet
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </a>
-            <a href="#simulator" class="btn btn-secondary btn-lg">Run Interactive Funnel Simulator</a>
           </div>
         </div>
-        <div class="hero-kpis">
-          <div class="kpi-card highlight">
-            <div class="kpi-label">Target Paid Annual CAC</div>
-            <div class="kpi-value">&le; $120.00</div>
-            <div class="kpi-meta">833 Paid Annual Subs @ $100k Budget</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-label">Anchor Optimization Event</div>
-            <div class="kpi-value">Trial Start ($48 CPT)</div>
-            <div class="kpi-meta">486/wk Account · 97–121/wk per Scale Ad Set</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-label">Sign Up &rarr; Paid Funnel CVR</div>
-            <div class="kpi-value">12.0% Net</div>
-            <div class="kpi-meta">30% Sign Up&rarr;Trial &times; 40% Trial&rarr;Paid ($14.40 CPSU)</div>
-          </div>
-          <div class="kpi-card">
-            <div class="kpi-label">Weekly Creative Throughput</div>
-            <div class="kpi-value">50 Ads / Wk</div>
-            <div class="kpi-meta">10 Concepts &times; 5 Variations ($7,000/wk ABO Test)</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Explicit Assumptions Bar -->
-      <div class="assumptions-banner">
-        <div class="assumptions-title">Explicit Baseline Assumptions (Editable Below &amp; in Tab 1 of Google Sheet):</div>
-        <div class="assumptions-pills">
-          <span><strong>Attribution Window:</strong> 7-Day Click / 1-Day View (7DC1DV) + SKAN 4.0 / AEM</span>
-          <span><strong>OS Split:</strong> 70% iOS ($70k) / 30% Android ($30k)</span>
-          <span><strong>Budget Split:</strong> 70% Scaling CBO ($70k) / 30% Creative Testing ABO ($30k)</span>
-          <span><strong>Intermediate Funnel Rates:</strong> Install&rarr;Sign Up 64% ($9.22 CPI) · Sign Up&rarr;Bank Linked 50% ($28.80 CPBL) · Bank Linked&rarr;Trial 60% ($48.00 CPT) · Trial&rarr;Deposit 65% ($73.85 CPBD)</span>
+        <div class="grid-2" style="margin-top: 24px;">
+          <div class="panel panel-accent">
+            <h3>1. Account Structure &amp; Result-Based Pacing</h3>
+            <ul class="styled-list">
+              <li><strong>Lean Launch:</strong> Days 1-5 on <code>Sign Up</code> ($500/d CBO, iOS + Android) to build pixel signal without wasting spend on <code>Install</code> campaigns.</li>
+              <li><strong>BAU Engine:</strong> Day 6+ shifts to <code>Trial Start</code> ($1,000/d Smart Ads CBO, 4 concept Ad Groups) at $48.00 target CPST.</li>
+              <li><strong>What to Expect:</strong> Controlled <strong>+20% / 72h</strong> scaling toward the $100k cap only when cohorts prove CPST &lt;= $48.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>2. Creative Testing &amp; Fatigue Control</h3>
+            <ul class="styled-list">
+              <li><strong>10-15% Testing Pool:</strong> Separate <code>Trial Start</code> campaign starting with 10-15 priority videos/wk (scaling toward 50/wk as spend grows) + a <strong>CBO vs. ABO</strong> delivery test.</li>
+              <li><strong>Automated Kill Gates:</strong> Meta Rules / MCP pause weak hooks at 2,000 impr and cut non-converting ads at $48-$96 spend.</li>
+              <li><strong>What to Expect:</strong> Early fatigue pauses via <strong>L3/L5/L7 CPST trends + CPC &gt; account avg</strong> before CAC spikes.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>3. Measurement (90D Forecast Model)</h3>
+            <ul class="styled-list">
+              <li><strong>No 7-Day Blind Spot:</strong> Pulls 90-day rolling Trial-to-Paid CVR% and trial churn from MMP to project today's CAC from today's spend and trials.</li>
+              <li><strong>LTV Guardrail:</strong> Tracks first-renewal retention by campaign in MMP + Meta.</li>
+              <li><strong>What to Expect:</strong> Same-day visibility into whether today's spend is tracking &lt;= $120 CAC.</li>
+            </ul>
+          </div>
+          <div class="panel panel-accent">
+            <h3>4. AI Workflow &amp; 30-Day Outcome</h3>
+            <ul class="styled-list">
+              <li><strong>Automated Ops:</strong> Meta MCP executes stop-losses/fatigue cuts and posts a <strong>Daily Performance Report</strong> (Spend, Registers, CPR, Start Trial, CPST, Projected CAC, Actual CAC).</li>
+              <li><strong>Human Governance:</strong> 100% human SEC RIA compliance review and root-cause checks before scaling spend.</li>
+              <li><strong>What to Expect:</strong> Disciplined Month-1 spend (~$43k-$100k based on performance) holding <strong>&lt;= $120 CAC</strong>.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Interactive Signal-Volume & Funnel Simulator -->
-    <section id="simulator" class="section-card">
+        <!-- Explicit Assumptions Bar -->
+        <div class="assumptions-banner">
+          <div class="assumptions-title">Baseline Model Assumptions (Aligned with Google Sheet):</div>
+          <div class="assumptions-pills">
+            <span><strong>Attribution:</strong> 7-Day Click (7DC) + SKAN 4.0 / MMP</span>
+            <span><strong>OS Split:</strong> 70% iOS / 30% Android</span>
+            <span><strong>Budget Split:</strong> 85-90% BAU Scale / 10-15% Creative Testing</span>
+            <span><strong>Reverse-Funnel Targets:</strong> $120 CAC | $48.00 CPST (40% Trial to Paid) | $14.40 CPR (30% Sign Up to Trial)</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SLIDE 2: B. ACCOUNT STRUCTURE AND OPTIMIZATION EVENTS -->
+    <div class="deck-slide" data-slide="1">
+    <section id="account-structure" class="section-card">
       <div class="section-header">
         <div>
-          <span class="section-tag">LIVE INTERACTIVE MODEL</span>
-          <h2>Full-Funnel Unit Economics &amp; Meta Signal-Volume Simulator</h2>
-          <p>Adjust budget, target CAC, conversion rates, or Ad Set count to test how signal density impacts Meta’s Learning Phase (&ge;50 events/ad set/week).</p>
-        </div>
-        <button id="reset-sim" class="btn btn-outline">Reset to Baseline ($100k / $120 CAC)</button>
-      </div>
-
-      <div class="sim-grid">
-        <!-- Controls -->
-        <div class="sim-controls">
-          <div class="control-group">
-            <div class="control-label">
-              <span>30-Day Media Budget</span>
-              <strong id="val-budget">$100,000</strong>
-            </div>
-            <input type="range" id="inp-budget" min="50000" max="250000" step="5000" value="100000" />
-          </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Target Paid Annual CAC</span>
-              <strong id="val-cac">$120.00</strong>
-            </div>
-            <input type="range" id="inp-cac" min="80" max="180" step="5" value="120" />
-          </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Sign Up &rarr; Trial Start CVR</span>
-              <strong id="val-su-trial">30.0%</strong>
-            </div>
-            <input type="range" id="inp-su-trial" min="15" max="50" step="1" value="30" />
-            <small class="control-hint">Prompt baseline: 30% (50% Bank Link &times; 60% Trial)</small>
-          </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Trial Start &rarr; Purchase CVR (After 7d Trial)</span>
-              <strong id="val-trial-paid">40.0%</strong>
-            </div>
-            <input type="range" id="inp-trial-paid" min="20" max="60" step="1" value="40" />
-            <small class="control-hint">Prompt baseline: 40% (65% Deposit &times; 61.5% Paid)</small>
-          </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Scaling Budget Allocation (vs. Testing)</span>
-              <strong id="val-scale-split">70% Scale / 30% Test</strong>
-            </div>
-            <input type="range" id="inp-scale-split" min="50" max="85" step="5" value="70" />
-          </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Consolidated Scaling Ad Sets (iOS + Android)</span>
-              <strong id="val-scale-adsets">3 Ad Sets</strong>
-            </div>
-            <input type="range" id="inp-scale-adsets" min="2" max="8" step="1" value="3" />
-            <small class="control-hint">2 iOS Broad/Persona Ad Sets + 1 Android Broad Ad Set</small>
-          </div>
-        </div>
-
-        <!-- Output Table -->
-        <div class="sim-output">
-          <div class="table-wrap">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Funnel Event (In Order)</th>
-                  <th>Step CVR</th>
-                  <th>Cum. CVR (from Sign Up)</th>
-                  <th>Max Target CPA</th>
-                  <th>30-Day Vol</th>
-                  <th>Weekly Vol (Acct)</th>
-                  <th>Events / Wk per Scale Ad Set</th>
-                  <th>Min Ad Set Budget for 50/wk</th>
-                  <th>Meta Learning Status (Scaling)</th>
-                </tr>
-              </thead>
-              <tbody id="sim-table-body">
-                <!-- Populated dynamically by app.js -->
-              </tbody>
-            </table>
-          </div>
-          <div id="sim-insight-box" class="callout-box">
-            <!-- Populated dynamically by app.js -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUESTION 1: ACCOUNT STRUCTURE & OPTIMIZATION EVENTS -->
-    <section id="q1-structure" class="section-card">
-      <div class="section-header">
-        <div>
-          <span class="section-tag">QUESTION 1 · ACCOUNT ARCHITECTURE &amp; SIGNAL MATH</span>
-          <h2>1. Account Structure &amp; Optimization Events</h2>
-          <p>How we structure the account from Day 1 cold start to scaled CBOs, and the mathematical proof behind our optimization event choices.</p>
+          <span class="section-tag">SECTION B | ACCOUNT STRUCTURE &amp; OPTIMIZATION EVENTS</span>
+          <h2>Account Structure and Optimization Events</h2>
+          <p>Simple iOS + Android launch structure: 5-day Sign Up warmup to build initial audience signal, followed by BAU Trial Start Smart Ads CBO backed by reverse-funnel math.</p>
         </div>
       </div>
 
-      <!-- The Core Mathematical Insight -->
+      <!-- Core Strategy & Reverse Math -->
       <div class="grid-2">
         <div class="panel panel-accent">
-          <h3>Why Optimizing for <code>Purchase</code> at Launch Fails (Dual Failure Mode)</h3>
-          <p>Optimizing a brand-new account for <code>Purchase</code> ($120 CAC) on Day 1 fails for two distinct mathematical reasons:</p>
-          <ol class="styled-list">
-            <li>
-              <strong>Signal Starvation (Volume Math):</strong> At $100,000/month ($23,333/week) and $120 CAC, the <em>entire account</em> only generates <strong>194 Purchases/week</strong> in steady state. Split across iOS, Android, Scaling, and Testing, individual ad sets receive only 10–35 events/week—trapping campaigns permanently in <code>Learning Limited</code> (&lt;50 events/week).
-            </li>
-            <li>
-              <strong>The 7-Day Free Trial vs. 7DC Attribution Cliff (Latency Math):</strong> Meta’s maximum click attribution window is <strong>7-Day Click (7DC)</strong>. Because Alinea has a <strong>7-day free trial</strong>, any user who clicks an ad on Day 0, signs up, and starts their trial even 4–12 hours later converts to Paid on <strong>Day 7.2 to Day 8.5</strong>—<em>outside Meta’s 7-day click window!</em> During Week 1 (Days 1–7), Meta sees <strong>nearly zero Purchases</strong>, causing bids and CPMs to spiral.
-            </li>
-          </ol>
+          <h3>Why Start Low at <code>Sign Up</code>, Then Scale on <code>Trial Start</code></h3>
+          <ul class="styled-list">
+            <li><strong>Protect Capital Early:</strong> We do not force all $100k on Day 1. We start lean ($500/d warmup -> $1,000/d BAU) and only scale toward the $100k cap as cohorts prove &lt;=$48 CPT.</li>
+            <li><strong>Skip <code>Install</code> &amp; Day-1 <code>Purchase</code>:</strong> Install campaigns bring low-intent traffic. Purchase campaigns suffer from &lt;50 events/week and the 7-day trial lag (conversions fire on Day 7-8, outside Meta's 7DC window).</li>
+            <li><strong>Budget Split (85-90% Scale / 10-15% Test):</strong> Keep 85-90% of spend in proven BAU CBO and 10-15% in Creative Testing, plus run a controlled <strong>CBO vs. ABO experiment</strong> to validate spend distribution.</li>
+          </ul>
         </div>
 
         <div class="panel">
-          <h3>Why <code>Trial Start</code> ($48 CPT) is our Primary Scaling Anchor</h3>
-          <p>By anchoring Core Scaling on <strong><code>Trial Start</code></strong> (after a 4-day cold-start warmup on <code>Bank Linked</code>):</p>
+          <h3>Reverse-Funnel Math (From $120 CAC Backward)</h3>
+          <p>Using the baseline funnel rates (30% Sign Up to Trial, 40% Trial to Paid):</p>
           <ul class="styled-list">
-            <li>
-              <strong>2.5&times; Signal Density:</strong> At 40% Trial&rarr;Paid CVR, a $120 CAC equals a <strong>$48.00 Target Cost per Trial Start (CPT)</strong>. To hit 50 events/week, an Ad Set needs <code>50 &times; $48 = $2,400/week ($343/day)</code> instead of <code>$6,000/week ($857/day)</code>.
-            </li>
-            <li>
-              <strong>Same-Day Signal Velocity (Zero 7-Day Cliff):</strong> 94%+ of Trial Starts occur within 0–24 hours of install. Both Meta’s 7DC1DV pixel/CAPI and Apple’s SKAN 4.0 Window 1 (0–48h fine conversion value) capture the event immediately.
-            </li>
-            <li>
-              <strong>High Down-Funnel Intent:</strong> Unlike <code>Sign Up</code> ($14.40 CPA, where Meta hunts for cheap email submitters who never link a bank), a <code>Trial Start</code> requires passing KYC/Plaid linkage and committing a payment method.
-            </li>
+            <li><strong>Purchase (Goal CAC):</strong> <code>$120.00</code> max CAC (12% net from Sign Up).</li>
+            <li><strong>Trial Start (BAU Anchor):</strong> <code>$120 x 40% = $48.00</code> max CPT.</li>
+            <li><strong>Sign Up (Days 1-5 Warmup):</strong> <code>$48 x 30% = $14.40</code> max CPSU.</li>
+            <li><strong>App Install (Tracked Only):</strong> <code>~$8.64-$9.22</code> CPI at 60-64% Install to Sign Up.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Campaign Architecture Table -->
-      <h3 class="sub-heading">30-Day Account Structure &amp; Budget Allocation ($100,000 / 30 Days = $3,333/Day)</h3>
+      <!-- Clean Campaign Setup Table (iOS + Android) -->
+      <h3 class="sub-heading">Campaign Setup &amp; Signal Volume (iOS 70% / Android 30%)</h3>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Campaign Name</th>
-              <th>Role &amp; Budget Share</th>
-              <th>Buying Type</th>
-              <th>Daily / Weekly Spend</th>
-              <th>Active Ad Sets &amp; Setup</th>
-              <th>Targeting &amp; Compliance Guardrails</th>
-              <th>Launch Event (Days 1–5)</th>
-              <th>Primary Event (Day 6+ &amp; Signals/Ad Set)</th>
+              <th>Campaign</th>
+              <th>OS Split &amp; Budget</th>
+              <th>Type &amp; Ad Group Setup</th>
+              <th>Optimization Event</th>
+              <th>Signal Volume (Reverse Math)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code>1. ALN_US_iOS_Scaling_CBO</code></td>
-              <td><span class="tag tag-green">Core Scale · 50%</span></td>
-              <td>CBO (Advantage+ Campaign Budget)</td>
-              <td><strong>$1,667/d</strong><br/>($11,667/wk)</td>
-              <td><strong>2 Ad Sets</strong> ($5,833/wk each):<br/>• AS1: Broad Open (Proven Winners)<br/>• AS2: High-Intent FinTech / Wealth Persona Pack</td>
-              <td>US, 18+ (SEC RIA / FinServ policy), Broad gender/interests, Adv+ Placements, Exclude existing Sign Ups &amp; Plaid Linked users via CAPI</td>
-              <td><code>Bank Linked</code><br/>(202 ev/wk/AS)</td>
-              <td><strong><code>Trial Start</code></strong><br/><span class="status-ok">121.5 ev/wk/AS (Exits Learning)</span></td>
+              <td><strong>1. Sign Up Warmup</strong><br/><span class="tag tag-blue">Days 1-5 Only</span></td>
+              <td><strong>iOS + Android</strong><br/>$500/day ($2,500 total)<br/><span class="text-muted">$350/d iOS | $150/d Android</span></td>
+              <td><strong>CBO</strong><br/>Seeded with top-performing ads from prior validated concepts. US 18+, Broad Open, exclude existing users.</td>
+              <td><strong><code>Sign Up</code></strong><br/>($14.40 target CPSU)</td>
+              <td><strong>~35 Sign Ups/day</strong> (~174 total in 5 days)<br/><span class="status-ok">Builds pixel signal + ~52 early Trials</span></td>
             </tr>
             <tr>
-              <td><code>2. ALN_US_AND_Scaling_CBO</code></td>
-              <td><span class="tag tag-green">Core Scale · 20%</span></td>
-              <td>CBO</td>
-              <td><strong>$667/d</strong><br/>($4,667/wk)</td>
-              <td><strong>1 Consolidated Ad Set</strong> ($4,667/wk):<br/>• AS1: Broad Open Android 10+ (High-LTV handset tier)</td>
-              <td>US, 18+, Broad Open, Exclude existing users, Google Play Install Referrer + CAPI server events</td>
-              <td><code>Bank Linked</code><br/>(162 ev/wk/AS)</td>
-              <td><strong><code>Trial Start</code></strong><br/><span class="status-ok">97.2 ev/wk/AS (Exits Learning)</span></td>
+              <td><strong>2. Trial Start BAU</strong><br/><span class="tag tag-green">85-90% Spend | Day 6+</span></td>
+              <td><strong>iOS + Android</strong><br/>Starts at $1,000/day BAU<br/><span class="text-muted">$700/d iOS | $300/d Android (scales w/ ROAS/CAC)</span></td>
+              <td><strong>Smart Ads CBO</strong><br/><strong>4 Ad Groups</strong> by creative theme/concept, each loaded with top ads for that concept.</td>
+              <td><strong><code>Trial Start</code></strong><br/>($48.00 target CPT)</td>
+              <td><strong>~21 Trials/day (~146/wk at start)</strong><br/><span class="status-ok">Top 2 CBO Ad Groups hit 50+ ev/wk</span></td>
             </tr>
             <tr>
-              <td><code>3. ALN_US_iOS_Creative_Testing_ABO</code></td>
-              <td><span class="tag tag-blue">Creative Test · 20%</span></td>
-              <td>ABO (Ad Set Budget)</td>
-              <td><strong>$667/d</strong><br/>($4,667/wk)</td>
-              <td><strong>3 Modular Pod Ad Sets</strong> (~$1,555/wk each):<br/>Grouped by Concept Pillar (3–4 concepts/pod, 4–6 variations)</td>
-              <td>US, 18+, Broad Open (identical audience across pods to isolate creative variable), Exclude existing users</td>
-              <td><code>Sign Up</code><br/>(108 ev/wk/AS)</td>
-              <td><strong><code>Bank Linked</code></strong><br/><span class="status-ok">54.0 ev/wk/AS (Exits Learning)</span></td>
-            </tr>
-            <tr>
-              <td><code>4. ALN_US_AND_Creative_Testing_ABO</code></td>
-              <td><span class="tag tag-blue">Fast Hook Test · 5%</span></td>
-              <td>ABO</td>
-              <td><strong>$167/d</strong><br/>($1,167/wk)</td>
-              <td><strong>2 Rapid-Read Hook Ad Sets</strong> ($583/wk each):<br/>Tests high-variance hooks at lower Android CPMs</td>
-              <td>US, 18+, Broad Open Android, Deterministic GAID attribution for rapid 48h hook/CTR diagnostics</td>
-              <td><code>Sign Up</code><br/>(40.5 ev/wk/AS)</td>
-              <td><strong><code>Sign Up</code></strong> (gated by Bank Link ratio)<br/><span class="status-warn">40.5 ev/wk/AS (Fast Upper-Funnel Read)</span></td>
-            </tr>
-            <tr>
-              <td><code>5. ALN_US_CrossOS_Warm_Retargeting</code></td>
-              <td><span class="tag tag-purple">Mid-Funnel · 5%</span></td>
-              <td>ABO</td>
-              <td><strong>$167/d</strong><br/>($1,167/wk)</td>
-              <td><strong>1 Warm Funnel Ad Set</strong> ($1,167/wk):<br/>Targets App Installers / Sign Ups who haven't Linked Bank or Started Trial (Days 1–14)</td>
-              <td>Custom Audience: <code>Sign Up (14d)</code> EXCLUDING <code>Trial Start (180d)</code>. Focuses creative on Plaid security, SIPC/SEC trust &amp; social proof</td>
-              <td><code>Trial Start</code></td>
-              <td><strong><code>Trial Start / Bank Deposit</code></strong><br/><span class="status-ok">High CVR Warm Pool (~38+ ev/wk)</span></td>
+              <td><strong>3. Creative Testing + CBO vs. ABO</strong><br/><span class="tag tag-purple">10-15% of Spend</span></td>
+              <td><strong>iOS + Android</strong><br/>$120-$150/day at launch<br/><span class="text-muted">Scales proportionally (10-15% of total spend)</span></td>
+              <td><strong>CBO primary</strong>, with a <strong>CBO vs. ABO split experiment</strong> to test if ABO gives new hooks fairer delivery without starving winners.</td>
+              <td><strong><code>Sign Up</code> / <code>Trial Start</code></strong><br/>(gated by Day-0 Deposit)</td>
+              <td>Feeds winning Post IDs into BAU Smart Ads CBO as spend scales toward $100k/30d cap.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Phase Progression Diagram -->
-      <h3 class="sub-heading">Optimization Event Progression &amp; Exact Switch Triggers</h3>
+      <!-- Simple Switch Triggers -->
+      <h3 class="sub-heading">When We Switch &amp; Scale</h3>
       <div class="timeline-grid">
         <div class="timeline-step">
-          <div class="step-badge">PHASE 1 · DAYS 1–5 (COLD PIXEL WARMUP)</div>
-          <h4>Scale: <code>Bank Linked</code> ($28.80) · Test: <code>Sign Up</code> ($14.40)</h4>
-          <p><strong>Why:</strong> A brand-new pixel has zero conversion weights. Optimizing Scaling for <code>Bank Linked</code> generates <strong>~116 events/day</strong> across the account while immediately filtering out low-intent "email-only" leads. Testing uses <code>Sign Up</code> for rapid 48-hour hook reads.</p>
-          <div class="trigger-pill"><strong>Switch Trigger:</strong> Move Scaling to <code>Trial Start</code> as soon as each Scaling Ad Set logs &ge;35 Bank Links &amp; &ge;15 Trial Starts (typically Day 4–5).</div>
+          <div class="step-badge">DAYS 1-5 | WARMUP</div>
+          <h4><code>Sign Up</code> ($500/day CBO)</h4>
+          <p>Captures ~174 Sign Ups across iOS + Android so Meta learns who converts past Install without overspending.</p>
+          <div class="trigger-pill"><strong>Trigger:</strong> End on Day 5 once ~170+ Sign Ups and initial Trials are logged.</div>
         </div>
         <div class="timeline-step">
-          <div class="step-badge">PHASE 2 · DAYS 6–21 (PRIMARY SCALE ENGINE)</div>
-          <h4>Scale: <code>Trial Start</code> ($48.00) · Test: <code>Bank Linked</code> ($28.80)</h4>
-          <p><strong>Why:</strong> At $5,833/wk per iOS Scaling Ad Set and $4,667/wk on Android, each Scaling Ad Set generates <strong>97 to 121 Trial Starts/week</strong>—More than 2&times; the 50/week requirement to exit Learning Phase, with same-day CAPI/SKAN feedback.</p>
-          <div class="trigger-pill"><strong>Switch Trigger:</strong> Hold throughout Month 1 unless a single Scaling Ad Set scales past $6,000/wk ($857/day) AND synthetic CAPI value scoring is live.</div>
+          <div class="step-badge">DAY 6+ | RESULT-BASED SCALE</div>
+          <h4><code>Trial Start</code> ($1,000/d+ Smart Ads CBO)</h4>
+          <p>Start at $1,000/d BAU (85-90% scale / 10-15% test) and run the CBO vs. ABO experiment in parallel.</p>
+          <div class="trigger-pill"><strong>Trigger:</strong> Scale +20% every 72h toward $100k cap only if Cost per Trial holds &lt;=$48 and Day-0 Deposit &gt;=65%.</div>
         </div>
         <div class="timeline-step">
-          <div class="step-badge">PHASE 3 · DAY 22+ / MONTH 2 ($150K+ SCALE)</div>
-          <h4>Scale: <code>Funded Trial (Trial + Deposit)</code> or <code>Synthetic pLTV</code></h4>
-          <p><strong>Why:</strong> Because raw <code>Purchase</code> occurs 7 days after Trial Start (falling on the edge of 7DC), we do <strong>not</strong> blindly switch to delayed Day-8 <code>Purchase</code>. Instead, we fire a custom CAPI event <code>Qualified_Trial_Funded</code> (User starts trial + initiates Bank Deposit within 24h, $73.85 CPA, 61.5% Paid CVR) or run a 50/50 split test once Ad Set budget exceeds $857/day.</p>
-          <div class="trigger-pill"><strong>Switch Trigger:</strong> Ad Set Spend &ge;$6,000/wk + &ge;50 Funded Trials/wk per Ad Set.</div>
+          <div class="step-badge">MONTH 2+ | HIGH SCALE</div>
+          <h4>Test <code>Funded Trial</code> / <code>Purchase</code></h4>
+          <p>Only test deeper events once an Ad Group generates 50+ Purchases/week inside the 7DC window.</p>
+          <div class="trigger-pill"><strong>Guardrail:</strong> Keep BAU on <code>Trial Start</code> until 50+ down-funnel events/wk are proven.</div>
         </div>
       </div>
     </section>
+    </div>
 
-    <!-- QUESTION 2: CREATIVE TESTING & SCALING SYSTEM -->
-    <section id="q2-creative" class="section-card">
+    <!-- SLIDE 3: C. CREATIVE TESTING AND SCALING SYSTEM -->
+    <div class="deck-slide" data-slide="2">
+    <section id="creative-system" class="section-card">
       <div class="section-header">
         <div>
-          <span class="section-tag">QUESTION 2 · CREATIVE VELOCITY &amp; GRADUATION SYSTEM</span>
-          <h2>2. Creative Testing &amp; Scaling System (50 New Ads / Week)</h2>
-          <p>How we test 10 new concepts &times; 5 variations (50 ads/week) on $7,000/week without fragmenting signal or burning budget on losers.</p>
+          <span class="section-tag">SECTION C | CREATIVE TESTING &amp; SCALING SYSTEM</span>
+          <h2>Creative Testing and Scaling System</h2>
+          <p>Separate Trial Start testing campaign using 10-15% of spend, AI + Meta MCP / automated stop-loss rules, and L3/L5/L7 fatigue detection.</p>
         </div>
       </div>
 
       <div class="grid-2">
         <div class="panel">
-          <h3>How We Structure 50 Ads/Week ($7,000/Wk Testing Budget)</h3>
-          <p>If you put 50 ads into 1 CBO, Meta spends 80% of the budget on 2 high-CTR ads and starves the other 48. Conversely, if you create 50 separate Ad Sets, each gets $140/week (&lt;3 Trial Starts/week—pure noise). Our <strong>Concept-Clustered ABO System</strong> solves both:</p>
+          <h3>Separate Testing Campaign (10-15% of Spend, Opt: <code>Trial Start</code>)</h3>
+          <p>All new creative launches in a dedicated testing campaign optimized for <code>Trial Start</code> ($48 target CPT), keeping BAU delivery stable.</p>
           <ul class="styled-list">
-            <li><strong>10 Concept Batches / Week ($700 Allocated per Concept):</strong> Each concept has 1 core body/script and 4–6 hook/visual variations (e.g., 3 video hooks + 1 static + 1 carousel/format variant).</li>
-            <li><strong>2x Weekly Launch Cadence (Tuesday &amp; Friday Drops):</strong>
-              <ul>
-                <li><strong>Batch A (Tuesday, 5 Concepts = 25 Ads):</strong> $3,500 budget over 72–96 hours across 3 iOS + 2 Android Concept ABO Ad Sets.</li>
-                <li><strong>Batch B (Friday, 5 Concepts = 25 Ads):</strong> $3,500 budget over 72–96 hours.</li>
-              </ul>
-            </li>
-            <li><strong>Why Concept-Level Ad Sets Work:</strong> Inside a single Concept Ad Set, all 5 ads share the same core value proposition and compete <em>only</em> on Hook / Thumbstop efficiency. Meta naturally routes spend to the strongest 1–2 hook variations per concept within 48 hours.</li>
+            <li><strong>Budget-to-Volume Trade-Off:</strong> At $1,000/d BAU, 10-15% testing ($700-$1,200/wk) cannot fund 50 ads at once ($14-$24/ad is under 0.5x CPT). We start with 10-15 priority videos/wk (2-3 concepts) so each ad gets real delivery, and scale toward 40-50 ads/wk as total spend grows toward $100k/mo ($2,300-$3,500/wk testing).</li>
+            <li><strong>Concept Grouping:</strong> 4-6 hook variations share one Concept Ad Group so Meta routes spend to the strongest 1-2 hooks within 48h.</li>
+            <li><strong>CBO vs. ABO Experiment:</strong> Run a controlled split to test if ABO gives new hooks fairer initial spend than CBO.</li>
           </ul>
         </div>
 
         <div class="panel">
-          <h3>4-Stage Automated Stop-Loss &amp; Winner Thresholds</h3>
+          <h3>Automated Decision Tree (Meta Rules + AI / Meta MCP)</h3>
           <div class="gate-list">
             <div class="gate-item gate-kill">
-              <div class="gate-header"><strong>Gate 1: 2,500 Impressions (~$72 Spend) — Hook &amp; CTR Gate</strong></div>
-              <p><strong>Kill Rule:</strong> Outbound CTR &lt; 0.75% OR Video Thumbstop (3s views / Impressions) &lt; 20%.<br/>
-              <strong>Diagnosis:</strong> Hook failed to stop scroll. If Hold Rate (15s) is &ge;10%, salvage body with a new 3-second hook.</p>
+              <div class="gate-header"><strong>Gate 1: &gt;= 2,000 Impressions | Early Hook Check</strong></div>
+              <p><strong>Rule:</strong> Hook Rate (3s) &lt; 25% AND Outbound CTR &lt; 0.8% -> <strong>PAUSE</strong> via Meta Rule / MCP. AI tags "Weak Hook" for a 0-3s intro rewrite.</p>
             </div>
             <div class="gate-item gate-kill">
-              <div class="gate-header"><strong>Gate 2: $45 Ad Spend (3x Target CPSU) — Upper-Funnel Gate</strong></div>
-              <p><strong>Kill Rule:</strong> 0 Sign Ups at $45 spend, OR Cost per Sign Up (CPSU) &gt; $21.60 (1.5&times; target $14.40) after $75 spend.</p>
+              <div class="gate-header"><strong>Gate 2: $48-$72 Spend (1x-1.5x CPT) | Early Intent Gate</strong></div>
+              <p><strong>Rule:</strong> 0 Sign Ups -> <strong>PAUSE</strong>. <em>Patience exception:</em> if Hook Rate &gt; 35% and Hold Rate &gt; 15%, allow up to 2x CPT ($96) before cutting.</p>
             </div>
             <div class="gate-item gate-kill">
-              <div class="gate-header"><strong>Gate 3: $120 Concept Spend (72 Hours) — Plaid Trust Gate</strong></div>
-              <p><strong>Kill Rule:</strong> Cost per Bank Linked (CPBL) &gt; $40.00 (vs. $28.80 target) OR 0 Trial Starts after $120 spend.<br/>
-              <strong>Diagnosis:</strong> "Clickbait Trap"—ad drives cheap sign-ups who refuse to link their bank account.</p>
+              <div class="gate-header"><strong>Gate 3: $96-$120 Spend (2x-2.5x CPT) | Hard Stop-Loss</strong></div>
+              <p><strong>Rule:</strong> 0 Trial Starts at $96 spend OR CPT &gt; 2.5x ($120) -> <strong>HARD KILL</strong> via Meta Automated Rule / MCP.</p>
             </div>
             <div class="gate-item gate-win">
-              <div class="gate-header"><strong>Gate 4: Day 5–7 Graduation Criteria (What Makes a Winner)</strong></div>
-              <p><strong>Winner Threshold:</strong> Concept achieves <strong>&ge;8–10 Trial Starts</strong> at <strong>CPT &le; $48.00</strong> (or CPBL &le; $28.80 with &ge;55% Day-0 Bank Deposit rate) and Outbound CTR &ge; 1.25% over 5–7 days.</p>
+              <div class="gate-header"><strong>Gate 4: Days 5-7 | Winner Graduation</strong></div>
+              <p><strong>Rule:</strong> CPT &lt;= $48 (up to 1.2x if Day-0 Deposit &gt;= 65% in MMP/DB) -> <strong>WINNER</strong>. Graduate via Post ID to BAU. CPT $49-$72 with strong hook -> <strong>ITERATE</strong>.</p>
             </div>
           </div>
         </div>
@@ -382,152 +243,154 @@
       <div class="grid-3">
         <div class="mini-card">
           <h4>1. How Winners Graduate</h4>
-          <p>We <strong>never pause the winning ad in Testing while it’s still profitable</strong>, and we never re-upload from scratch. We extract the <strong>existing Meta Post ID</strong> and duplicate it into <code>ALN_US_iOS_Scaling_CBO</code> and <code>ALN_US_AND_Scaling_CBO</code> in Weekly Batches (max 2x/week so we don’t reset CBO learning). Preserves 100% of comments, likes, and algorithmic engagement history.</p>
+          <p>We pull the winning <strong>Meta Post ID</strong> and duplicate it into the BAU <code>Trial Start</code> Smart Ads CBO without editing the ad, preserving social proof and avoiding a Learning reset.</p>
         </div>
         <div class="mini-card">
-          <h4>2. How We Scale Winners (Horizontal + Vertical)</h4>
-          <p><strong>Vertical Scale:</strong> Increase Scaling CBO budgets by <strong>+15% to +20% every 48–72 hours</strong> whenever trailing 3-day CPT &le; $46 and Funded Trial Ratio &ge; 65%.<br/>
-          <strong>Horizontal Scale (The Multiplier):</strong> Every graduated winner immediately triggers a <strong>"Fast-Follow Iteration Brief"</strong>: 5 new opening hooks (0–3s), 2 new creator voices, and 9:16 Reels / 4:5 Feed / Static cutdowns.</p>
+          <h4>2. How We Scale Winners</h4>
+          <p><strong>Vertical:</strong> Increase BAU CBO budget by <strong>+20% every 72h</strong> only if Cost per Trial holds &lt;= $48 and Day-0 Deposit &gt;= 65%.<br/>
+          <strong>Horizontal:</strong> Every winner triggers 3-5 new 0-3s opening hooks and creator variations.</p>
         </div>
         <div class="mini-card">
-          <h4>3. Pulling Back &amp; Creative Fatigue</h4>
-          <p><strong>Fatigue Leading Indicators:</strong> 7-day Prospecting Frequency &gt; 2.2x, Thumbstop dropping &gt;20% from peak, and 3-day rolling CPT exceeding $56 (+17% over target).<br/>
-          <strong>Action:</strong> We don't wait for CAC to hit $150. When CPT crosses $55 for 72h with declining CTR, we rotate in the pre-tested Hook Variants of that concept and demote the fatigued Post ID.</p>
+          <h4>3. Creative Fatigue (L3 / L5 / L7 Trend)</h4>
+          <p><strong>Trigger:</strong> Monitor rolling <strong>L3, L5, and L7 CPT trends</strong> alongside CPC. If CPT trends upward across L3/L5/L7 AND the ad's <strong>CPC is above the account average</strong>, pause the fatigued Post ID via Meta MCP / Automated Rules and rotate in pre-tested hook variants.</p>
         </div>
       </div>
     </section>
+    </div>
 
-    <!-- QUESTION 3: MEASUREMENT & 7-DAY TRIAL LAG -->
-    <section id="q3-measurement" class="section-card">
+    <!-- SLIDE 4: D. MEASUREMENT -->
+    <div class="deck-slide" data-slide="3">
+    <section id="measurement" class="section-card">
       <div class="section-header">
         <div>
-          <span class="section-tag">QUESTION 3 · MEASUREMENT &amp; PREDICTIVE COHORT CAC</span>
-          <h2>3. Measurement: Navigating the 7-Day Free Trial Lag</h2>
-          <p>How we know within Days 3–14 whether we are on track for a $120 CAC before 7-day trials finish converting—and which data source governs which decision.</p>
+          <span class="section-tag">SECTION D | MEASUREMENT &amp; 90-DAY FORECAST MODEL</span>
+          <h2>Measurement: Automated 90D Forecast &amp; Holistic Attribution</h2>
+          <p>How we project today's CAC during the 7-day trial lag using a 90-day rolling CVR model, trial churn, and first-renewal LTV across MMP + Meta.</p>
         </div>
       </div>
 
       <!-- The Cash vs Cohort Trap -->
       <div class="callout-box callout-warning">
-        <strong>The Week-1 Measurement Trap:</strong> Because every new user enters a <strong>7-day free trial</strong> before converting to a paid annual subscription, <strong>Week 1 Cash Purchases will be near zero</strong> (only immediate trial-skippers). A naive marketer looking at <code>Week 1 Spend ($18,000) / Week 1 Cash Purchases (~25) = $720 Apparent CAC</code> will panic and shut off winning campaigns! Instead, we manage Weeks 1–2 using <strong>3 Leading Cohort Indicators (Day-0 / Day-1 Proxies)</strong> and <strong>Lagged Cohort Maturity Curves</strong>.
+        <strong>Why We Forecast Instead of Waiting 7 Days:</strong> With a 7-day free trial, Week 1-2 cash purchases in Meta Ads Manager are near zero. Waiting 8 days to judge CAC slows optimization and risks overspending. Instead, we run an <strong>automated daily forecast model</strong> on today's Trial Starts.
       </div>
 
-      <!-- Early Warning Predictive CAC Calculator & Formula -->
+      <!-- 90-Day Forecast Model & Interactive Checker -->
       <div class="grid-2" style="margin-top: 1.5rem;">
         <div class="panel">
-          <h3>The Day-1 Predictive CAC Formula (<code>pCAC</code>)</h3>
-          <p>Within 24 hours of install, we predict each cohort’s Day-8 Paid CAC using three deterministic internal + MMP signals:</p>
+          <h3>Automated 90D Rolling Forecast Model</h3>
+          <p>Every day, we pull the last <strong>90 days of Trial Starts and Paid Subs</strong> from our MMP to calculate a rolling daily Trial-to-Paid CVR%, then apply it to today's live Meta spend and trials:</p>
           <div class="formula-display">
-            <code>pCAC = Cohort CPT &divide; [ (Funded_Trial_% &times; 61.5%) + (Unfunded_NonCanceled_Trial_% &times; 14.0%) ]</code>
+            <code>Projected Paid Subs = Today's Trials x 90D Trial-to-Paid CVR% x Churn Adj.</code><br/>
+            <code>Projected CAC = Today's Spend / Projected Paid Subs</code>
           </div>
           <ul class="styled-list">
             <li>
-              <strong>Metric 1: Cohort Cost per Trial Start (<code>CPT &le; $48.00</code>)</strong><br/>
-              Tracked on Day 0/Day 1. At our baseline 40% Trial&rarr;Paid CVR, a $48.00 CPT mathematically locks in a <strong>$120.00 Paid CAC</strong> (<code>$48 / 0.40 = $120</code>).
+              <strong>Step 1 (90D Rolling CVR%):</strong> Daily baseline from MMP (40% Trial-to-Paid in our scenario) gives a real-time conversion benchmark across iOS and Android.
             </li>
             <li>
-              <strong>Metric 2: Day-0 Funded Trial Ratio (<code>Bank Deposit / Trial Start &ge; 65%</code>)</strong><br/>
-              <em>This is the ultimate FinTech quality filter.</em> A user who starts a free trial AND initiates a bank deposit on Day 0 has skin in the game (61.5% convert to Paid on Day 8). If an ad drives $35 CPTs but only 20% initiate a deposit, it is attracting "freebie hunters"—we kill it on Day 3 without waiting 7 days!
+              <strong>Step 2 (Trial Churn / Cancel Rate):</strong> Factor in early trial cancellations (users who cancel before Day 7) so today's Projected CAC reflects real retention, not raw trial volume.
             </li>
             <li>
-              <strong>Metric 3: 24-Hour Auto-Renew Survival Rate (<code>&ge; 82%</code>)</strong><br/>
-              In subscription apps, ~80% of all trial cancellations happen within the first 24 hours ("subscribe &amp; immediately cancel in Apple Settings"). Measuring 24h survival gives us an accurate Trial-to-Paid read by <strong>Day 2</strong> instead of Day 8.
+              <strong>Step 3 (First-Renewal LTV Extension):</strong> The same model tracks first-renewal retention to project <strong>campaign-level LTV</strong>, ensuring we scale campaigns that retain past Month/Year 1.
             </li>
           </ul>
         </div>
 
-        <!-- Interactive Early-Warning Cohort Checker -->
+        <!-- Interactive Forecast Checker -->
         <div class="panel panel-accent">
-          <h3>Interactive Week 1–2 Early-Warning Cohort Checker</h3>
-          <p>Test how Day-0/Day-1 signals predict Day-8 Paid CAC before trials finish:</p>
-          <div class="control-group">
-            <div class="control-label">
-              <span>Observed Day-0/1 Cost per Trial Start (CPT)</span>
-              <strong id="val-early-cpt">$48.00</strong>
+          <div class="forecast-header">
+            <div>
+              <h3 style="margin-bottom:4px;">Same-Day CAC Forecast Checker</h3>
+              <p style="font-size:13px;color:var(--text-secondary);">Simulate today's CPT, 90D CVR, and trial churn:</p>
             </div>
-            <input type="range" id="inp-early-cpt" min="25" max="80" step="1" value="48" />
-          </div>
-          <div class="control-group">
-            <div class="control-label">
-              <span>Day-0 Funded Trial Rate (Deposit / Trial)</span>
-              <strong id="val-early-deposit">65%</strong>
+            <div class="preset-row">
+              <button type="button" class="preset-btn" data-preset="strong">Strong Creative</button>
+              <button type="button" class="preset-btn active" data-preset="baseline">Baseline ($120)</button>
+              <button type="button" class="preset-btn" data-preset="churn">High Churn</button>
             </div>
-            <input type="range" id="inp-early-deposit" min="20" max="90" step="5" value="65" />
           </div>
-          <div class="control-group">
-            <div class="control-label">
-              <span>24-Hour Auto-Renew Survival Rate</span>
-              <strong id="val-early-survive">82%</strong>
-            </div>
-            <input type="range" id="inp-early-survive" min="50" max="95" step="2" value="82" />
-          </div>
-          <div id="early-cac-result" class="early-result-box">
+
+          <div id="early-cac-result" class="forecast-hero">
             <!-- Populated by app.js -->
+          </div>
+
+          <div class="slider-stack">
+            <div class="slider-card">
+              <div class="control-label">
+                <span>Today's Observed CPT (Meta)</span>
+                <strong id="val-early-cpt">$48.00</strong>
+              </div>
+              <input type="range" id="inp-early-cpt" min="25" max="80" step="1" value="48" />
+            </div>
+            <div class="slider-card">
+              <div class="control-label">
+                <span>90D Rolling Trial-to-Paid CVR (MMP)</span>
+                <strong id="val-early-deposit">40%</strong>
+              </div>
+              <input type="range" id="inp-early-deposit" min="20" max="65" step="1" value="40" />
+            </div>
+            <div class="slider-card">
+              <div class="control-label">
+                <span>Early Trial Churn / Cancel Rate</span>
+                <strong id="val-early-survive">18%</strong>
+              </div>
+              <input type="range" id="inp-early-survive" min="5" max="45" step="1" value="18" />
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Triangulated Source of Truth Table -->
-      <h3 class="sub-heading">Triangulated Source of Truth: Which Data We Trust for Which Decision</h3>
+      <!-- Holistic Source of Truth Table (MMP + Meta) -->
+      <h3 class="sub-heading">Holistic Data Stack: MMP + Meta + Internal Billing</h3>
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
               <th>Data Source</th>
-              <th>Attribution Model</th>
-              <th>What We Trust It For (Exact Decisions)</th>
-              <th>What We NEVER Trust It For (Blind Spots)</th>
+              <th>Role in Measurement</th>
+              <th>Decisions It Governs</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>1. Meta Ads Manager</strong><br/><span class="text-muted">(Pixel/SDK + Server CAPI)</span></td>
-              <td>7-Day Click / 1-Day View (7DC1DV) + AEM</td>
+              <td><strong>1. MMP (AppsFlyer / Adjust + SKAN 4.0)</strong><br/><span class="text-muted">(Primary Cohort &amp; Forecast Source)</span></td>
+              <td>Tracks install-date cohorts, 90D rolling Trial-to-Paid CVR%, trial churn, and first-renewal LTV; deduplicates Meta vs. other channels.</td>
               <td>
-                • <strong>Directional creative &amp; hook decisions</strong> (Thumbstop, Hold Rate, CTR, CPC)<br/>
-                • <strong>Intraday ad-level CPSU / CPBL / CPT comparisons</strong><br/>
-                • Checking Ad Set Learning Phase velocity (50 events/7d)
-              </td>
-              <td>
-                • <strong>True Day-8 Paid CAC:</strong> Misses ~45% of post-trial conversions that happen &gt;7 days after click, while simultaneously <em>over-claiming</em> 1-day view-through conversions from organic/brand traffic.
+                - Feeds the automated 90D daily forecast model<br/>
+                - Validates iOS vs. Android cohort CAC and LTV<br/>
+                - Greenlights +20% / 72h BAU budget scaling
               </td>
             </tr>
             <tr>
-              <td><strong>2. Mobile Measurement Partner (MMP)</strong><br/><span class="text-muted">(AppsFlyer / Adjust + SKAN 4.0)</span></td>
-              <td>Deterministic Install-Date Cohort (D0, D1, D7, D14) + Multi-Touch Deduplication</td>
+              <td><strong>2. Meta Ads Manager (Pixel / SDK + CAPI)</strong><br/><span class="text-muted">(Real-Time Media &amp; Creative Signal)</span></td>
+              <td>Provides intraday spend, today's Trial Starts, CPT, CPC, CTR, and Hook Rate across ad groups and creatives.</td>
               <td>
-                • <strong>Campaign &amp; OS-level budget allocation</strong> (iOS vs. Android CPT &amp; CAC)<br/>
-                • <strong>Install-date cohort maturity curves</strong> (matching Day-0 spend to Day-8 trial conversions)<br/>
-                • Deduplicating Meta vs. Apple Search Ads / Google / Organic
-              </td>
-              <td>
-                • <strong>Intraday creative cuts on iOS:</strong> SKAN 4.0 postbacks have a 24–72h random timer delay and lack creative-variation granularity when privacy thresholds aren't met.
+                - Powers today's spend &amp; trial inputs for Projected CAC<br/>
+                - Drives creative stop-loss rules &amp; L3/L5/L7 fatigue pauses<br/>
+                - Guides creative &amp; audience optimization in real time
               </td>
             </tr>
             <tr>
-              <td><strong>3. Internal Backend DB</strong><br/><span class="text-muted">(Plaid + Stripe / App Store Server Notifications)</span></td>
-              <td>First-Party User ID + Apple/Google Webhook + Onboarding Survey</td>
+              <td><strong>3. Holistic View (MMP + Meta Joined)</strong><br/><span class="text-muted">(Combined Operating Layer)</span></td>
+              <td>Joins MMP cohort CVR/churn/LTV with Meta's creative and audience breakdown.</td>
               <td>
-                • <strong>Executive financial truth &amp; Scaling Greenlight (&gt;$100k/mo)</strong><br/>
-                • <strong>24h Trial Cancellation Rate &amp; Plaid Deposit Size</strong><br/>
-                • Calculating Blended MER / Net CAC (after refunds or failed renewal charges)
-              </td>
-              <td>
-                • <strong>Upper-funnel media buying diagnostics:</strong> Cannot see impression frequency, CPM inflation, or unclicked ad views.
+                - Gives a single view of which <strong>creatives and audiences</strong> actually drive profitable renewals, not just cheap trials
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
+    </div>
 
-    <!-- QUESTION 4: AI IN YOUR WORKFLOW -->
-    <section id="q4-ai" class="section-card">
+    <!-- SLIDE 5: E. AI IN YOUR WORKFLOW -->
+    <div class="deck-slide" data-slide="4">
+    <section id="ai-workflow" class="section-card">
       <div class="section-header">
         <div>
-          <span class="section-tag">QUESTION 4 · AI AUTOMATION VS. HUMAN GOVERNANCE</span>
-          <h2>4. AI in Our Workflow &amp; Human-in-the-Loop Control</h2>
-          <p>Where we deploy AI for speed and pattern recognition, where a human stays strictly in control (especially in regulated FinTech), and concrete systems I’ve built in past roles.</p>
+          <span class="section-tag">SECTION E | AI IN YOUR WORKFLOW &amp; DAILY REPORTING</span>
+          <h2>AI in Your Workflow &amp; Human-in-the-Loop Control</h2>
+          <p>Where AI and Meta MCP automate execution and daily forecasting, and where a human stays strictly in control for SEC compliance and capital allocation.</p>
         </div>
       </div>
 
@@ -536,118 +399,146 @@
           <thead>
             <tr>
               <th>Workflow Layer</th>
-              <th>Where AI Runs (Automation &amp; Custom Tools)</th>
-              <th>Where a Human Deliberately Stays in Control &amp; Why</th>
+              <th>Where AI &amp; Automation Run</th>
+              <th>Where a Human Stays in Control &amp; Why</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>1. Meta Platform Automation</strong><br/><span class="text-muted">(Advantage+ &amp; Bidding)</span></td>
+              <td><strong>1. Meta Platform Automation</strong><br/><span class="text-muted">(Smart Ads CBO &amp; Advantage+)</span></td>
               <td>
-                • <strong>Advantage+ Placements &amp; Broad Liquidity:</strong> Let Meta’s retrieval engine dynamically price Reels, Feed, and Stories across 18+ US audiences.<br/>
-                • <strong>CAPI Signal Enrichment:</strong> Automated server-side hashing of email/phone + Plaid link status to boost Event Match Quality (EMQ &ge; 8.5).
+                - Dynamic budget routing across the 4 concept Ad Groups in BAU.<br/>
+                - Advantage+ Placements &amp; Broad Open delivery across iOS + Android.<br/>
+                - Server-side CAPI event enrichment.
               </td>
               <td>
-                • <strong>Attribution Settings &amp; Audience Exclusions:</strong> Left on full autopilot, Advantage+ chases cheap 1-day view conversions and retargets existing users. A human locks optimization to <code>7DC</code> (or tight <code>7DC/1DV</code> with strict CAPI exclusions of existing Alinea users).<br/>
-                • <strong>Optimization Event Selection:</strong> Meta does not know Alinea has a 7-day trial lag; a human governs the <code>Bank Linked &rarr; Trial Start</code> progression.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>2. Creative Velocity Engine</strong><br/><span class="text-muted">(50 Ads / Week Pipeline)</span></td>
-              <td>
-                • <strong>Pain-Point Mining &amp; Hook Generation:</strong> LLM pipeline (Claude / GPT) scraping Reddit (<code>r/investing</code>, <code>r/personalfinance</code>), App Store reviews, and competitor Ad Library to draft 25 hook scripts/week mapped to Gen-Z/Millennial investing anxieties.<br/>
-                • <strong>Multimodal Creative Tagging:</strong> Computer-vision tagging (hook type, creator persona, visual pacing, CTA) joined against Meta Thumbstop &amp; CPT to auto-generate next week’s creative brief.
-              </td>
-              <td>
-                • <strong>SEC RIA / FINRA Compliance &amp; Brand Trust:</strong> Alinea is a <strong>regulated Registered Investment Adviser (CRD #311782 / SEC #801-120032)</strong>. AI models routinely hallucinate prohibited promissory language (<em>"guaranteed returns", "beat the market effortlessly"</em>) or omit required Form ADV/CRS risk disclosures. A human reviews 100% of ad copy/hooks before launch so the ad account is never banned or fined.
+                - <strong>Attribution &amp; Exclusions:</strong> Lock <code>7DC</code> and exclude existing Sign Ups/Trials via CAPI.<br/>
+                - <strong>Event Progression &amp; Scaling:</strong> Human controls the Day-5 <code>Sign Up</code> to <code>Trial Start</code> switch and the <code>+20% / 72h</code> scale rule.
               </td>
             </tr>
             <tr>
-              <td><strong>3. Pacing, Anomaly Detection &amp; Bi-Weekly Ops</strong><br/><span class="text-muted">(Custom Vibe-Coded Stack)</span></td>
+              <td><strong>2. Creative Testing &amp; Fatigue</strong><br/><span class="text-muted">(Meta MCP + Automated Rules)</span></td>
               <td>
-                • <strong>Automated "Ghost Trial" Detector:</strong> Hourly Python/SQL script joining Meta API spend with MMP/Internal Plaid events. Automatically flags any Ad Set where <code>CPT &le; $48</code> looks healthy in Meta, but internal <code>Day-0 Bank Deposit Rate &lt; 40%</code>.<br/>
-                • <strong>Automated Stop-Loss Alerts:</strong> Slack webhook alerts when any testing variation crosses $45 spend with 0 Sign Ups.
+                - Executes stop-loss cuts in Testing (Gate 1: &lt;25% Hook / &lt;0.8% CTR; Gate 3: $96 w/ 0 Trials).<br/>
+                - Flags fatigue when <strong>L3 / L5 / L7 CPT trends up</strong> AND <strong>Ad CPC &gt; Account Avg</strong>.<br/>
+                - AI pain-point mining &amp; 0-3s hook variation drafts.
               </td>
               <td>
-                • <strong>Capital Allocation Leaps &amp; Root-Cause Diagnosis:</strong> If Bank Link CVR suddenly drops 40% on a Tuesday, an automated rule would pause our best campaigns—when the real culprit might be a <strong>Plaid API outage or an iOS app release bug</strong>. A human verifies funnel health before making major budget cuts or &gt;20% scaling jumps.
+                - <strong>SEC RIA / FINRA Compliance:</strong> Alinea is a regulated RIA. AI can hallucinate promissory return claims; a human reviews 100% of copy and disclosures pre-launch.<br/>
+                - <strong>Creative Direction:</strong> Deciding which winning angles get fresh creator shoots.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>3. Daily Forecast &amp; Slack Ops</strong><br/><span class="text-muted">(MMP + Meta Automated Pipeline)</span></td>
+              <td>
+                - Pulls Meta Spend/Trials + MMP 90D rolling CVR &amp; churn every morning.<br/>
+                - Posts the <strong>Daily Performance &amp; Projected CAC Report</strong> to Slack automatically.
+              </td>
+              <td>
+                - <strong>Root-Cause Diagnosis:</strong> Distinguishing media fatigue from product/Plaid outages before cutting winning campaigns or approving scale leaps.
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Concrete Examples from Past Work -->
-      <div class="past-work-box">
-        <div class="past-work-header">
-          <span class="badge-pill">CONCRETE EXAMPLES FROM MY PAST WORK</span>
-          <h3>Real AI &amp; UA Systems Built by Jorge E. Gutiérrez</h3>
-        </div>
-        <div class="grid-2" style="margin-top: 1rem;">
-          <div class="case-study">
-            <h4>Case 1: Newform AI (Senior UA Manager, 2025–Present) — Vibe-Coded AI Performance Dashboard ($100/d &rarr; $1M/mo)</h4>
-            <p>
-              <strong>The Problem:</strong> While scaling a US Real-Money / Trading app with delayed monetization, Meta’s native reporting had a 48–72h attribution blind spot relative to actual first-time deposits (FTDs) and D7 retention, slowing down media buyer reactions.
-            </p>
-            <p>
-              <strong>What I Built:</strong> Using Vibe coding, I built and deployed an internal <strong>AI-powered real-time performance dashboard</strong> that centralized Meta Ads API, TikTok Ads, MMP cohort postbacks, and internal deposit logs into a single view. It automatically scored creative cohorts on Day-0 deposit velocity and flagged fatigued hooks before D7 ROAS dropped.
-            </p>
-            <p>
-              <strong>The Result:</strong> Kept humans in control of final bid/budget allocations while cutting diagnostic latency from days to minutes—enabling us to scale the account from <strong>$100/day to $1,000,000/month in ad spend while sustaining a 50% D7 ROAS</strong>.
-            </p>
-          </div>
-          <div class="case-study">
-            <h4>Case 2: Scopely ($5M/yr Budget) &amp; Storybook App (4X Subscriber Growth) — AI Creative Analysis &amp; Generation System</h4>
-            <p>
-              <strong>The Problem:</strong> High-velocity mobile UA requires testing dozens of variations weekly, but creative teams bottleneck on manual scripting and subjective creative feedback.
-            </p>
-            <p>
-              <strong>What I Built:</strong> At Scopely and Storybook (a subscription mobile app with a free-trial funnel identical to Alinea’s), I built a <strong>proprietary AI creative analysis and generation system</strong> coupled with a structured Ad Creative Optimization (ACO) testing framework. AI tagged every video/static asset by hook archetype, visual pacing, and emotional trigger, mapped them to Thumbstop, CTR, and Trial CVR, and generated data-backed hook variations.
-            </p>
-            <p>
-              <strong>The Result:</strong> Reduced creative production turnaround time by <strong>60%</strong>, improved average CTR by <strong>34%</strong>, and helped grow Storybook’s <strong>paid app subscribers by 4X and total users by 5X within 12 months</strong>.
-            </p>
-          </div>
-        </div>
+      <!-- Automated Daily Performance Report Sample -->
+      <h3 class="sub-heading">Automated Daily Performance Report (Meta + MMP 90D Forecast)</h3>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date / Window</th>
+              <th>Spend</th>
+              <th>Registers</th>
+              <th>CPR</th>
+              <th>Start Trial</th>
+              <th>CPST</th>
+              <th>Projected CAC (90D CVR)</th>
+              <th>Actual CAC (Last Matured Cohort)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 12 (Yesterday)</strong></td>
+              <td>$1,150</td>
+              <td>82</td>
+              <td>$14.02</td>
+              <td>25</td>
+              <td>$46.00</td>
+              <td><span class="status-ok">$115.00</span></td>
+              <td>$118.40 <span class="text-muted">(Day 4 cohort)</span></td>
+            </tr>
+            <tr>
+              <td><strong>L3 Days (Avg/d)</strong></td>
+              <td>$1,150</td>
+              <td>80</td>
+              <td>$14.38</td>
+              <td>24</td>
+              <td>$47.92</td>
+              <td><span class="status-ok">$119.80</span></td>
+              <td>$119.10 <span class="text-muted">(D2-D4 cohorts)</span></td>
+            </tr>
+            <tr>
+              <td><strong>L7 Days (Avg/d)</strong></td>
+              <td>$1,050</td>
+              <td>71</td>
+              <td>$14.79</td>
+              <td>21</td>
+              <td>$50.00</td>
+              <td><span class="status-warn">$125.00</span></td>
+              <td>$121.50 <span class="text-muted">(Warmup tail)</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Weekly Operating Rhythm -->
-      <h3 class="sub-heading">How I Operate Week-to-Week at Alinea (The Weekly UA Operating Cadence)</h3>
+      <h3 class="sub-heading">Weekly Operating Cadence</h3>
       <div class="cadence-bar">
         <div class="cadence-day">
           <strong>Monday</strong>
-          <span>Cohort reconciliation (Meta vs. MMP vs. Plaid/Stripe DB). Review matured D7 Trial&rarr;Paid cohorts. Scale winning CBOs (+15–20%).</span>
+          <span>Reconcile MMP 90D forecast vs. matured D7 cohorts. Apply +20% / 72h scale if CPST &lt;=$48.</span>
         </div>
         <div class="cadence-day">
           <strong>Tuesday</strong>
-          <span>Launch Creative Test Batch A (5 concepts = 25 ads). Graduate prior week’s winning Post IDs into Scaling CBOs.</span>
+          <span>Launch new concept variations in Testing; graduate winning Post IDs into BAU Smart Ads CBO.</span>
         </div>
         <div class="cadence-day">
           <strong>Wednesday</strong>
-          <span>48h Stop-Loss cut on Batch A ($45 spend / 0 Sign Up rule). Deliver AI-tagged creative insights &amp; hook brief to Creative Team.</span>
+          <span>Review Meta MCP stop-loss cuts ($48-$96 gates) and deliver hook iteration briefs.</span>
         </div>
         <div class="cadence-day">
           <strong>Thursday</strong>
-          <span>72h Plaid Link &amp; Funded Trial Ratio audit. Check iOS SKAN 4.0 conversion value distribution &amp; mid-funnel retargeting frequency.</span>
+          <span>Audit L3/L5/L7 CPST trends + CPC vs. account average; pause fatigued Post IDs.</span>
         </div>
         <div class="cadence-day">
           <strong>Friday</strong>
-          <span>Launch Creative Test Batch B (5 concepts = 25 ads). Weekend pacing &amp; automated Slack anomaly guardrails armed.</span>
+          <span>Check weekend pacing, trial churn rate, and automated Slack forecast alerts.</span>
         </div>
       </div>
     </section>
+    </div>
+
+    <!-- Deck Slide Navigation Bar -->
+    <div class="deck-footer-nav">
+      <button id="btn-prev-slide" class="btn btn-secondary">Previous Slide</button>
+      <div id="deck-slide-label" class="deck-slide-indicator">Slide <strong>1 / 5</strong> | A. Executive Summary</div>
+      <button id="btn-next-slide" class="btn btn-primary">Next Slide</button>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <strong>Alinea Invest — UA Manager Take-Home Challenge</strong> · Built by Jorge E. Gutiérrez Hernández (<a href="mailto:jorgeegtzhdz@gmail.com">jorgeegtzhdz@gmail.com</a>)
+        <strong>Alinea Assessment</strong> | by Jorge Gutierrez (<a href="mailto:jorgeegtzhdz@gmail.com">jorgeegtzhdz@gmail.com</a>)
       </div>
       <div>
-        <a href="https://docs.google.com/spreadsheets/d/1VdTnJMs2p4NLGI6j1Mb_CovsykTevPdEmVDoL3xnqY4/edit" target="_blank" rel="noopener noreferrer">Open Companion Google Spreadsheet &rarr;</a>
+        <a href="https://docs.google.com/spreadsheets/d/1VdTnJMs2p4NLGI6j1Mb_CovsykTevPdEmVDoL3xnqY4/edit" target="_blank" rel="noopener noreferrer">Open Companion Google Spreadsheet</a>
       </div>
     </div>
   </footer>
 
-  <script src="./app.js"></script>
+  <script src="./app.js?v=3"></script>
 </body>
 </html>
